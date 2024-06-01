@@ -5,6 +5,7 @@ import { AssignmentDetailComponent } from './assignments/assignment-detail/assig
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { authGuard } from './shared/auth.guard';
 import { AssignmentsScrollingComponent } from './assignments/assignments-scrolling/assignments-scrolling.component';
+import  { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'assignments/:id/edit', component: EditAssignmentComponent,
       canActivate: [authGuard] // only allow access to this route if the user is authenticated
     },
+    { path: 'login', component: LoginComponent },
     // in incorrect route redirect to home
     { path: '**', redirectTo: 'home' }
 ];
