@@ -10,17 +10,16 @@ import { AssignmentsComponent } from './assignments/assignments.component';
 import { AuthService } from './shared/auth.service';
 import { AssignmentsService } from './shared/assignments.service';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatFormFieldModule} from '@angular/material/form-field'; 
-import {MatInputModule} from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card'; 
+
+
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, MatButtonModule, MatIconModule, MatDividerModule,
-    AssignmentsComponent, RouterLink, MatSlideToggleModule,FlexLayoutModule,
-    MatFormFieldModule,MatInputModule,MatCardModule
+    AssignmentsComponent, RouterLink, MatSlideToggleModule,
+    
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
