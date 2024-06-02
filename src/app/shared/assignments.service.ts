@@ -13,7 +13,7 @@ export class AssignmentsService {
 
   assignments:Assignment[] = [];
   //backendUrl = 'http://localhost:8010/api/assignments';
-  backendUrl = 'https://angularestatic2024back.onrender.com/api/assignments';
+  backendUrl = 'https://back-angular.onrender.com/api/assignments';
  
   /**
    *  Renvoie tous les assignments 
@@ -23,7 +23,7 @@ export class AssignmentsService {
     // ira chercher les données dans la base de données
     // située dans le cloud
 
-    return this.http.get<any>(this.backendUrl+'?page='+page+'&limit='+limit);
+    return this.http.get<any>(this.backendUrl+'/all'+'?page='+page+'&limit='+limit);
   }
 
   /**
@@ -62,7 +62,7 @@ export class AssignmentsService {
 
   addAssignment(assignment:Assignment):Observable<any> {
     //this.assignments.push(assignment);
-    return this.http.post<Assignment>(this.backendUrl, assignment);
+    return this.http.post<Assignment>(this.backendUrl+'/new', assignment);
   }
 
   updateAssignment(assignment:Assignment):Observable<any> {
@@ -73,7 +73,7 @@ export class AssignmentsService {
     //let i = this.assignments.findIndex(a => a === assignment);
     //this.assignments[i] = assignment;
 
-    return this.http.put<Assignment>(this.backendUrl, assignment);
+    return this.http.put<Assignment>(this.backendUrl+'/update', assignment);
   }
 
   deleteAssignment(assignment:Assignment|undefined):Observable<any> {
@@ -86,7 +86,7 @@ export class AssignmentsService {
     //let pos = this.assignments.indexOf(assignment);
     //this.assignments.splice(pos, 1);
 
-    return this.http.delete<any>(this.backendUrl + '/' + assignment?._id);
+    return this.http.delete<any>(this.backendUrl + '/delete/' + assignment?._id);
   }
 
   peuplerBDNaive() {

@@ -37,7 +37,7 @@ import { AssignmentsService } from '../shared/assignments.service';
 })
 export class AssignmentsComponent {
   titre = "Liste des devoirs à faire :";
-  displayedColumns: string[] = ['nom', 'dateDeRendu', 'rendu'];
+  displayedColumns: string[] = ['nom', 'dateDeRendue', 'rendu'];
   pageSizeOptions = [5, 10, 25, 50, 100];
 
   assignments: Assignment[] = [];
